@@ -1,0 +1,2244 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourabh Prakash — MBA &amp; Tech Portfolio</title>
+  <meta name="description" content="Portfolio of Sourabh Prakash — MBA (Marketing & Finance) with BCA foundation. Specialized in HR & US Talent Acquisition, Business Analysis, and Banking & Credit Operations." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Ctext x='32' y='44' font-family='system-ui, sans-serif' font-weight='900' font-size='32' text-anchor='middle' fill='%23ff2a2a'%3ESP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* -------------------------------------------------------------
+       KŌDO / VIDEOPORTFOLIO INSPIRED DESIGN SYSTEM:
+       BRIGHT RED MODE (#ff2a2a) WITH CRISP LIGHT/WHITE TYPOGRAPHY
+       ------------------------------------------------------------- */
+    :root {
+      --bg-red: #ff2a2a;
+      --bg-red-deep: #e01f1f;
+      --bg-red-dark: #c01414;
+      --text-white: #ffffff;
+      --text-white-dim: rgba(255, 255, 255, 0.84);
+      --text-white-muted: rgba(255, 255, 255, 0.65);
+      --glass-bg: rgba(0, 0, 0, 0.22);
+      --glass-bg-hover: rgba(0, 0, 0, 0.32);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --glass-border-strong: rgba(255, 255, 255, 0.42);
+      --white-pill-bg: #ffffff;
+      --white-pill-text: #ff2a2a;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-red);
+      color: var(--text-white);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-red);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 0, 0, 0.15) 0%, transparent 50%);
+      color: var(--text-white);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    ::selection {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #c01414;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       PRELOADER: Clip-Path Wipe Effect like videoportfolio
+       ------------------------------------------------------------- */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--bg-red);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+    }
+    #preloader.loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader-box {
+      position: relative;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .preloader-bg-text {
+      color: rgba(120, 10, 10, 0.45);
+    }
+    .preloader-fg-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      clip-path: inset(100% 0px 0px 0px);
+      animation: preloaderReveal 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.2s;
+    }
+    .preloader-fg-text span {
+      color: #000000;
+    }
+    @keyframes preloaderReveal {
+      0% { clip-path: inset(100% 0px 0px 0px); }
+      100% { clip-path: inset(0px 0px 0px 0px); }
+    }
+
+    /* -------------------------------------------------------------
+       NAVBAR
+       ------------------------------------------------------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      background: rgba(255, 42, 42, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .nav-brand .dot {
+      color: #000000;
+      font-size: 1.8rem;
+      line-height: 0;
+    }
+    .nav-links {
+      display: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+    .nav-link {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #ffffff;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #ffffff;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn-pill-glass {
+      padding: 0.5rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-pill-glass:hover {
+      background: #ffffff;
+      color: var(--bg-red);
+      border-color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .btn-pill-white {
+      padding: 0.55rem 1.35rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--bg-red);
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-pill-white:hover {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+    @media (min-width: 900px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+    #mobileMenu {
+      display: none;
+      background: rgba(220, 20, 20, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1.5rem 1.5rem;
+    }
+    #mobileMenu.open {
+      display: block;
+    }
+    #mobileMenu a {
+      display: block;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      text-decoration: none;
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION
+       ------------------------------------------------------------- */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 8.5rem;
+      padding-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      color: #ffffff;
+      width: fit-content;
+    }
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 10px #ffffff;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-headline {
+      font-size: clamp(2.75rem, 7.5vw, 6.25rem);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+    .hero-greeting {
+      font-weight: 400;
+      opacity: 0.9;
+      display: block;
+      font-size: clamp(1.75rem, 4vw, 3.25rem);
+      margin-bottom: 0.25rem;
+    }
+    .hero-name {
+      color: #ffffff;
+    }
+    .hero-dot {
+      color: #000000;
+    }
+
+    .hero-subhead {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 400;
+      color: var(--text-white-dim);
+      max-width: 780px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Role Pills / Quick Tags */
+    .role-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 2.5rem;
+    }
+    .role-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .role-pill:hover, .role-pill.active {
+      background: #ffffff;
+      color: var(--bg-red);
+      border-color: #ffffff;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Metrics Bar */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .metric-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-3px);
+      background: var(--glass-bg-hover);
+    }
+    .metric-val {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+      color: #ffffff;
+    }
+    .metric-lbl {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-white-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION GENERAL STYLING
+       ------------------------------------------------------------- */
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 1.25rem;
+      color: #ffffff;
+    }
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-white-dim);
+      max-width: 650px;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    /* -------------------------------------------------------------
+       ABOUT / PHILOSOPHY CARDS
+       ------------------------------------------------------------- */
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 840px) {
+      .cards-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .feature-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 2.25rem;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-strong);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    .feature-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0.6;
+      margin-bottom: 1.25rem;
+    }
+    .feature-head {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+    .feature-body {
+      font-size: 0.95rem;
+      color: var(--text-white-dim);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .tag-sm {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+
+    /* -------------------------------------------------------------
+       EXPERTISE TABS & DYNAMIC CONTENT
+       ------------------------------------------------------------- */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .tab-btn {
+      padding: 0.75rem 1.45rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: #ffffff;
+      transition: all 0.25s ease;
+    }
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--bg-red);
+      border-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+    .tab-panel {
+      display: none;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border-strong);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(14px);
+    }
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tab-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 860px) {
+      .tab-panel-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+    .tab-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .tab-bullets li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.98rem;
+      color: var(--text-white-dim);
+      line-height: 1.55;
+    }
+    .tab-bullets li strong {
+      color: #ffffff;
+    }
+    .tab-bullet-icon {
+      color: #ffffff;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+    .tab-stats-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .stat-item-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-white-muted);
+      margin-bottom: 0.25rem;
+    }
+    .stat-item-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    /* -------------------------------------------------------------
+       PROJECT CARDS (2x2 GRID)
+       ------------------------------------------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 860px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .project-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      background: var(--glass-bg-hover);
+      border-color: rgba(255, 255, 255, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: var(--bg-red);
+      text-transform: uppercase;
+    }
+    .project-org {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-white-muted);
+    }
+    .project-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+    .project-summary {
+      font-size: 0.95rem;
+      color: var(--text-white-dim);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+    .project-deliverable {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid #ffffff;
+      padding: 0.9rem 1.15rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+      color: #ffffff;
+    }
+    .project-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    /* -------------------------------------------------------------
+       SKILLS MATRIX (4 PILLARS)
+       ------------------------------------------------------------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .skill-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .skill-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .skill-pillar-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      color: #ffffff;
+    }
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .skill-list li {
+      font-size: 0.88rem;
+      color: var(--text-white-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-list li::before {
+      content: '•';
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* -------------------------------------------------------------
+       TIMELINE SECTION
+       ------------------------------------------------------------- */
+    .timeline {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    @media (min-width: 768px) {
+      .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.75rem;
+      padding-left: 55px;
+    }
+    @media (min-width: 768px) {
+      .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        padding-right: 3rem;
+      }
+      .timeline-item.right {
+        margin-left: 50%;
+        padding-right: 0;
+        padding-left: 3rem;
+      }
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 13px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    @media (min-width: 768px) {
+      .timeline-item .timeline-dot {
+        left: auto;
+        right: -8px;
+      }
+      .timeline-item.right .timeline-dot {
+        right: auto;
+        left: -8px;
+      }
+    }
+    .timeline-content {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      backdrop-filter: blur(12px);
+    }
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 0.65rem;
+    }
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+    .timeline-org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-white-muted);
+      margin-bottom: 0.75rem;
+    }
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-white-dim);
+      line-height: 1.55;
+    }
+
+    /* -------------------------------------------------------------
+       CONTACT SECTION (Identical structure to videoportfolio-kohl)
+       ------------------------------------------------------------- */
+    .contact-container {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid var(--glass-border-strong);
+      border-radius: 24px;
+      padding: 2.5rem 1.75rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+    @media (min-width: 768px) {
+      .contact-container {
+        padding: 4.5rem;
+      }
+    }
+    .contact-sub-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+    }
+    .form-grid-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .form-grid-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+    .form-col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .underline-input-group {
+      position: relative;
+    }
+    .underline-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-family: var(--font-sans);
+      color: #ffffff;
+      outline: none;
+      transition: border-color 0.25s ease;
+      border-radius: 0;
+    }
+    .underline-input::placeholder {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+    .underline-input:focus {
+      border-bottom-color: #ffffff;
+      box-shadow: 0 2px 0 0 #ffffff;
+    }
+    .underline-textarea {
+      width: 100%;
+      height: 100%;
+      min-height: 140px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-family: var(--font-sans);
+      color: #ffffff;
+      outline: none;
+      resize: none;
+      transition: border-color 0.25s ease;
+      border-radius: 0;
+    }
+    .underline-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+    .underline-textarea:focus {
+      border-bottom-color: #ffffff;
+      box-shadow: 0 2px 0 0 #ffffff;
+    }
+    .form-bottom-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    @media (min-width: 768px) {
+      .form-bottom-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+    .permission-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+    }
+    .permission-wrap input {
+      margin-top: 0.2rem;
+      accent-color: #ffffff;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .form-submit-wrap {
+      display: flex;
+      justify-content: flex-start;
+    }
+    @media (min-width: 768px) {
+      .form-submit-wrap {
+        justify-content: flex-end;
+      }
+    }
+    .btn-submit-send {
+      padding: 0.85rem 2.25rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .btn-submit-send:hover {
+      background: #ffffff;
+      color: var(--bg-red);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .btn-submit-send svg {
+      transition: transform 0.25s ease;
+    }
+    .btn-submit-send:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER: SOURABH IN MASSIVE CONDENSED TYPOGRAPHY
+       ------------------------------------------------------------- */
+    .site-footer {
+      background: #111111;
+      color: #d4d4d4;
+      padding: 5rem 1.5rem 3.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .site-footer {
+        padding: 6rem 2.5rem 4rem;
+      }
+    }
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 768px) {
+      .footer-top-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer-col-center {
+        text-align: center;
+      }
+      .footer-col-right {
+        text-align: right;
+      }
+    }
+    .footer-col-title {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .footer-col-desc {
+      color: #999999;
+      line-height: 1.6;
+    }
+
+    /* Giant Lowercase/Uppercase Typography */
+    .footer-huge-name-wrap {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 0;
+      user-select: none;
+    }
+    .footer-huge-name {
+      font-size: clamp(3.75rem, 16vw, 15rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 0.85;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .footer-bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .footer-bottom-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .footer-email-link {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s ease;
+    }
+    .footer-email-link:hover {
+      color: var(--bg-red);
+    }
+
+    /* -------------------------------------------------------------
+       PRINTABLE ATS RESUME MODAL
+       ------------------------------------------------------------- */
+    #resumeModal {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #resumeModal.active {
+      display: flex;
+    }
+    .modal-paper {
+      background: #ffffff;
+      color: #1a1a1a;
+      width: 100%;
+      max-width: 900px;
+      max-height: 92vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (max-width: 600px) {
+      .modal-paper {
+        padding: 1.5rem;
+      }
+    }
+    .modal-close-btn {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+      z-index: 10;
+    }
+    .print-btn {
+      background: var(--bg-red);
+      color: #ffffff;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-right: 0.5rem;
+    }
+
+    /* Resume Document Styling (ATS-Clean) */
+    .resume-doc h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 0.25rem;
+    }
+    .resume-doc .resume-subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .resume-contact-bar {
+      font-size: 0.82rem;
+      color: #444;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #222;
+      margin-bottom: 1.25rem;
+    }
+    .resume-sec-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.25rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .resume-job {
+      margin-bottom: 1rem;
+    }
+    .resume-job-head {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #111;
+    }
+    .resume-job-sub {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0.35rem;
+    }
+    .resume-job ul {
+      margin-left: 1.25rem;
+      font-size: 0.85rem;
+      color: #333;
+      line-height: 1.5;
+    }
+    .resume-skill-row {
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+      color: #333;
+    }
+    .resume-skill-row strong {
+      color: #111;
+    }
+
+    /* Print Overrides */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #resumeModal, #resumeModal * {
+        visibility: visible !important;
+      }
+      #resumeModal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      .modal-paper {
+        max-width: 100% !important;
+        max-height: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      .modal-close-btn, .print-btn {
+        display: none !important;
+      }
+    }
+
+    /* Toast Notification */
+    #copyToast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #000000;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      z-index: 100001;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    #copyToast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER (Inspired by videoportfolio-kohl) -->
+  <div id="preloader">
+    <div class="preloader-box">
+      <div class="preloader-bg-text">SOURABH.</div>
+      <div class="preloader-fg-text">SOURABH<span>.</span></div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar" id="mainNav">
+      <div class="container nav-inner">
+        <a href="#home" class="nav-brand">
+          SOURABH <span class="dot">.</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#expertise" class="nav-link">Expertise</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#timeline" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn-pill-glass" onclick="openResumeModal()" title="View & Print ATS Format Resume">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            ATS Resume
+          </button>
+          <a href="#contact" class="btn-pill-white">
+            Hire Me
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <div id="mobileMenu">
+        <a href="#home" onclick="toggleMobileMenu()">Home</a>
+        <a href="#about" onclick="toggleMobileMenu()">About</a>
+        <a href="#expertise" onclick="toggleMobileMenu()">Expertise</a>
+        <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+        <a href="#timeline" onclick="toggleMobileMenu()">Experience</a>
+        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        <div style="margin-top: 1rem; display: flex; gap: 0.75rem;">
+          <button class="btn-pill-glass" onclick="openResumeModal()" style="width: 100%; justify-content: center;">ATS Resume</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <!-- Status Badge -->
+        <div class="badge-status">
+          <span class="status-pulse"></span>
+          <span>AVAILABLE FOR FULL-TIME &amp; TRAINEE ROLES · LUCKNOW / HYBRID</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          <span class="hero-greeting">Hi, I'm</span>
+          <span class="hero-name">Sourabh Prakash</span><span class="hero-dot">.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="hero-subhead">
+          MBA candidate (Marketing &amp; Finance) with a technical BCA foundation. Specializing in 
+          <strong>US Talent Acquisition</strong>, <strong>Business &amp; Requirements Analysis</strong>, and 
+          <strong>Banking &amp; Financial Operations</strong>.
+        </p>
+
+        <!-- Role Selectors -->
+        <div class="role-pills">
+          <span class="role-pill active" onclick="filterVertical('all')">ALL VERTICALS</span>
+          <span class="role-pill" onclick="filterVertical('hr')">HR &amp; TALENT ACQUISITION</span>
+          <span class="role-pill" onclick="filterVertical('ba')">BUSINESS ANALYSIS</span>
+          <span class="role-pill" onclick="filterVertical('banking')">BANKING &amp; CREDIT OPS</span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-pill-white" style="font-size: 1rem; padding: 0.8rem 1.85rem;">
+            Get In Touch
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <button class="btn-pill-glass" onclick="openResumeModal()" style="font-size: 0.95rem; padding: 0.75rem 1.45rem;">
+            Download CV / PDF
+          </button>
+          <button class="btn-pill-glass" onclick="copyEmail()" style="font-size: 0.95rem; padding: 0.75rem 1.45rem;">
+            Copy Email
+          </button>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-val">4 States</div>
+            <div class="metric-lbl">US Hiring Pipeline (OR, AL, UT, PA)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">162</div>
+            <div class="metric-lbl">NMAT by GMAC Score</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">11 Mos</div>
+            <div class="metric-lbl">Classroom Leadership &amp; Mentoring</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">BCA + MBA</div>
+            <div class="metric-lbl">Dual Tech &amp; Management Degrees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="container">
+        <span class="section-tag">01 / The Intersection</span>
+        <h2 class="section-title">Where Computer Logic Meets Commercial Strategy.</h2>
+        <p class="section-desc">
+          I bridge the gap between technical developers, analytical numbers, and human talent. 
+          Having coded during my BCA before advancing to an MBA in Marketing &amp; Finance, I bring structured clarity to every role.
+        </p>
+
+        <div class="cards-grid-3">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div>
+              <div class="feature-num">01 / HUMAN CAPITAL</div>
+              <h3 class="feature-head">Talent Acquisition &amp; US Recruitment</h3>
+              <p class="feature-body">
+                Sourcing and screening qualified talent across 4 US states (Oregon, Alabama, Utah, and Pennsylvania) at Exolios Global. Managing full-cycle candidate pipelines, Boolean string search, and ATS compliance.
+              </p>
+            </div>
+            <div class="feature-tags">
+              <span class="tag-sm">Boolean Sourcing</span>
+              <span class="tag-sm">US Tax Terms</span>
+              <span class="tag-sm">ATS Screening</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div>
+              <div class="feature-num">02 / SYSTEMS &amp; DATA</div>
+              <h3 class="feature-head">Business Analysis &amp; Requirements</h3>
+              <p class="feature-body">
+                Translating complex business needs into functional software specifications (BRD/FRD), UML workflows, and gap analyses. Proficient in SQL queries, data modeling, and bridging engineers with management.
+              </p>
+            </div>
+            <div class="feature-tags">
+              <span class="tag-sm">BRD / FRD</span>
+              <span class="tag-sm">SQL &amp; Excel</span>
+              <span class="tag-sm">Process Flow</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div>
+              <div class="feature-num">03 / COMMERCIAL OPERATIONS</div>
+              <h3 class="feature-head">Banking Ops &amp; Retail Merchandising</h3>
+              <p class="feature-body">
+                Retail floor operations and pricing elasticity at V-Mart Retail Ltd., paired with academic training in credit risk assessment, KYC/AML compliance, and CASA customer relationship management.
+              </p>
+            </div>
+            <div class="feature-tags">
+              <span class="tag-sm">SKU Turn Optimization</span>
+              <span class="tag-sm">Credit Underwriting</span>
+              <span class="tag-sm">KYC / AML</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE SECTION WITH TABS -->
+    <section id="expertise">
+      <div class="container">
+        <span class="section-tag">02 / Core Capabilities</span>
+        <h2 class="section-title">Specialized Verticals &amp; Toolkits.</h2>
+        <p class="section-desc">
+          Click the verticals below to examine detailed workflows, competencies, and deliverables.
+        </p>
+
+        <!-- Tab Buttons -->
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab('tab-hr')">01. HR &amp; US Talent Acquisition</button>
+          <button class="tab-btn" onclick="switchTab('tab-ba')">02. Business Analysis &amp; Data Systems</button>
+          <button class="tab-btn" onclick="switchTab('tab-banking')">03. Banking &amp; Credit Operations</button>
+        </div>
+
+        <!-- Tab 1: HR -->
+        <div class="tab-panel active" id="tab-hr">
+          <div class="tab-panel-grid">
+            <div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Full-Cycle Recruitment &amp; US Staffing Pipeline</h3>
+              <ul class="tab-bullets">
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Multi-State US Sourcing:</strong> Executing targeted Boolean search and LinkedIn Recruiter campaigns across Oregon, Alabama, Utah, and Pennsylvania.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Tax Terms &amp; Compliance:</strong> Thorough knowledge of US employment classifications (W2, C2C, 1099), work authorization verification, and rate negotiation.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Candidate Experience:</strong> Conducting structured telephonic screens, assessing technical/cultural fit, and managing candidates through ATS submittals to closure.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Stakeholder Coordination:</strong> Partnering with Account Managers and Lead Recruiters to calibrate job requirements and expedite interview turnaround time.</div>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-stats-box">
+              <div>
+                <div class="stat-item-title">Current Role</div>
+                <div class="stat-item-value">US Talent Intern</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">Exolios Global</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Target Geographic Scope</div>
+                <div class="stat-item-value">OR, AL, UT, PA</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">Healthcare &amp; Technical Roles</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Core Tools</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #ffffff;">LinkedIn Recruiter, JobDiva/ATS, Monster, Boolean Builder</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: BA -->
+        <div class="tab-panel" id="tab-ba">
+          <div class="tab-panel-grid">
+            <div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Business Requirements &amp; Process Optimization</h3>
+              <ul class="tab-bullets">
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>BRD / FRD Drafting:</strong> Writing comprehensive Business Requirement Documents, Functional Specifications, and User Stories with clear acceptance criteria.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Data Modeling &amp; SQL:</strong> Querying relational databases, performing VLOOKUP/Index-Match financial models, and building executive dashboards.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Gap &amp; Workflow Analysis:</strong> Visualizing As-Is vs To-Be business processes using BPMN diagrams, identifying operational bottlenecks.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Technical Liaison:</strong> BCA foundation enables seamless communication with engineering teams while maintaining MBA business priorities.</div>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-stats-box">
+              <div>
+                <div class="stat-item-title">Foundation</div>
+                <div class="stat-item-value">BCA + MBA</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">KMC University &amp; BBDU</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Core Artifacts</div>
+                <div class="stat-item-value">BRD · FRD · User Stories</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">Agile &amp; Scrum Methodologies</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Software Stack</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #ffffff;">SQL, Advanced Excel, Lucidchart, JIRA, Power BI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Banking -->
+        <div class="tab-panel" id="tab-banking">
+          <div class="tab-panel-grid">
+            <div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem;">Banking Operations &amp; Relationship Management</h3>
+              <ul class="tab-bullets">
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Credit Risk Evaluation:</strong> Financial statement analysis, debt service coverage ratio (DSCR), current ratio, and creditworthiness appraisal.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>CASA &amp; Portfolio Growth:</strong> Strategies for acquiring and retaining Current &amp; Savings Accounts, cross-selling wealth products and term deposits.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Regulatory Compliance:</strong> Rigorous adherence to RBI banking norms, KYC (Know Your Customer) guidelines, and AML (Anti-Money Laundering) checks.</div>
+                </li>
+                <li>
+                  <span class="tab-bullet-icon">✓</span>
+                  <div><strong>Client Advisory:</strong> Building long-term trust with retail and MSME clients to structure appropriate working capital solutions.</div>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-stats-box">
+              <div>
+                <div class="stat-item-title">Specialization</div>
+                <div class="stat-item-value">Marketing &amp; Finance</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">BBDU Lucknow (2025–2027)</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Aptitude Benchmark</div>
+                <div class="stat-item-value">162 NMAT</div>
+                <div style="font-size: 0.85rem; color: var(--text-white-dim); margin-top: 0.2rem;">National Management Aptitude Score</div>
+              </div>
+              <div>
+                <div class="stat-item-title">Key Competencies</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #ffffff;">Financial Ratios, Working Capital, CASA Sourcing, Credit Appraisal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="container">
+        <span class="section-tag">03 / Demonstrated Work</span>
+        <h2 class="section-title">Projects &amp; Field Engagements.</h2>
+        <p class="section-desc">
+          Real-world case studies showcasing execution speed, analytical modeling, and organizational impact.
+        </p>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-tag">Talent Acquisition</span>
+                <span class="project-org">Exolios Global · 2024</span>
+              </div>
+              <h3 class="project-title">Multi-State US Staffing Pipeline &amp; Compliance</h3>
+              <p class="project-summary">
+                Built an active sourcing pipeline for niche technical and healthcare roles across Oregon, Alabama, Utah, and Pennsylvania. Engineered Boolean strings tailored to W2/C2C candidate pools.
+              </p>
+              <div class="project-deliverable">
+                <strong>Impact:</strong> Screened 200+ candidates, maintained zero compliance discrepancies, and shortened initial screening turnaround by 25%.
+              </div>
+            </div>
+            <div class="project-skills">
+              <span class="tag-sm">Boolean Logic</span>
+              <span class="tag-sm">US Staffing</span>
+              <span class="tag-sm">ATS Management</span>
+              <span class="tag-sm">W2 / C2C</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-tag">Retail Analytics</span>
+                <span class="project-org">V-Mart Retail Ltd. · 2024</span>
+              </div>
+              <h3 class="project-title">Store Operations &amp; SKU Pricing Optimization</h3>
+              <p class="project-summary">
+                Conducted floor-level store operations analysis, evaluating customer footfall patterns, stock replenishment frequency, and price elasticity for seasonal retail apparel.
+              </p>
+              <div class="project-deliverable">
+                <strong>Impact:</strong> Delivered recommendations on visual merchandising placement that improved high-margin SKU visibility and reduced shelf-out stock events.
+              </div>
+            </div>
+            <div class="project-skills">
+              <span class="tag-sm">Retail Analytics</span>
+              <span class="tag-sm">Inventory Velocity</span>
+              <span class="tag-sm">Pricing Elasticity</span>
+              <span class="tag-sm">MS Excel</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-tag">Banking &amp; Finance</span>
+                <span class="project-org">Academic Research · BBDU</span>
+              </div>
+              <h3 class="project-title">CASA Acquisition &amp; High-Net-Worth Advisory Playbook</h3>
+              <p class="project-summary">
+                Formulated an operational framework for retail banking branches to accelerate low-cost CASA deposit mobilization and cross-sell bancassurance to affluent client demographics.
+              </p>
+              <div class="project-deliverable">
+                <strong>Impact:</strong> Outlined credit underwriting risk rubrics and KYC compliance workflows that minimize onboarding friction while upholding statutory standards.
+              </div>
+            </div>
+            <div class="project-skills">
+              <span class="tag-sm">CASA Mobilization</span>
+              <span class="tag-sm">Credit Risk</span>
+              <span class="tag-sm">Financial Modeling</span>
+              <span class="tag-sm">KYC / AML</span>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-tag">Software Systems</span>
+                <span class="project-org">BCA Capstone Project · KMCU</span>
+              </div>
+              <h3 class="project-title">Centralized Placement Portal &amp; Candidate Database</h3>
+              <p class="project-summary">
+                Architected and developed a relational database-backed web application to automate student resume parsing, company interview scheduling, and eligibility matching.
+              </p>
+              <div class="project-deliverable">
+                <strong>Impact:</strong> Replaced manual spreadsheets with a normalized SQL database, reducing candidate shortlisting time for placement officers by 60%.
+              </div>
+            </div>
+            <div class="project-skills">
+              <span class="tag-sm">SQL Database</span>
+              <span class="tag-sm">BRD Documentation</span>
+              <span class="tag-sm">Web Architecture</span>
+              <span class="tag-sm">SDLC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <div class="container">
+        <span class="section-tag">04 / Capabilities</span>
+        <h2 class="section-title">Technical &amp; Functional Skills.</h2>
+        <p class="section-desc">
+          A balanced synthesis of analytical computing, talent sourcing methodologies, and financial acumen.
+        </p>
+
+        <div class="skills-grid">
+          <!-- Pillar 1 -->
+          <div class="skill-card">
+            <div class="skill-icon">📊</div>
+            <h3 class="skill-pillar-title">Analytical &amp; Finance</h3>
+            <ul class="skill-list">
+              <li>Advanced MS Excel (VLOOKUP, Pivot)</li>
+              <li>Financial Ratio Analysis</li>
+              <li>Credit Underwriting Basics</li>
+              <li>Pricing Elasticity &amp; Margins</li>
+              <li>CASA Mobilization Strategy</li>
+              <li>Working Capital Assessment</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="skill-card">
+            <div class="skill-icon">👥</div>
+            <h3 class="skill-pillar-title">Talent Acquisition</h3>
+            <ul class="skill-list">
+              <li>US Staffing (OR, AL, UT, PA)</li>
+              <li>Boolean Search Logic</li>
+              <li>LinkedIn Recruiter Workflows</li>
+              <li>W2, C2C &amp; 1099 Tax Terms</li>
+              <li>ATS Sourcing &amp; Vetting</li>
+              <li>Interview Coordination</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="skill-card">
+            <div class="skill-icon">📋</div>
+            <h3 class="skill-pillar-title">Business Analysis</h3>
+            <ul class="skill-list">
+              <li>BRD &amp; FRD Documentation</li>
+              <li>Requirement Elicitation</li>
+              <li>Process Flowcharts (BPMN)</li>
+              <li>User Stories &amp; Acceptance</li>
+              <li>Gap &amp; Feasibility Analysis</li>
+              <li>Agile &amp; Scrum Principles</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3 class="skill-pillar-title">Tech &amp; Leadership</h3>
+            <ul class="skill-list">
+              <li>SQL (Queries, Joins, Tables)</li>
+              <li>Python Foundations</li>
+              <li>Database Management (RDBMS)</li>
+              <li>11-Month Teaching &amp; Mentoring</li>
+              <li>Conflict Resolution</li>
+              <li>Executive Presentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline">
+      <div class="container">
+        <span class="section-tag">05 / Background</span>
+        <h2 class="section-title">Journey &amp; Education.</h2>
+        <p class="section-desc">
+          Milestones showing continuous academic progression and practical corporate execution.
+        </p>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025 – 2027</span>
+              <h3 class="timeline-role">MBA (Marketing &amp; Finance)</h3>
+              <div class="timeline-org">Babu Banarasi Das University (BBDU), Lucknow</div>
+              <p class="timeline-desc">
+                Focusing on financial analysis, commercial brand marketing, retail strategies, and corporate leadership. Achieved 162 in NMAT by GMAC.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024 – Present</span>
+              <h3 class="timeline-role">US Talent Acquisition Intern</h3>
+              <div class="timeline-org">Exolios Global</div>
+              <p class="timeline-desc">
+                Managing end-to-end sourcing for US job orders across Oregon, Alabama, Utah, and Pennsylvania. Conducting screening calls and tracking candidate submittals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024</span>
+              <h3 class="timeline-role">Store Operations &amp; Pricing Intern</h3>
+              <div class="timeline-org">V-Mart Retail Ltd.</div>
+              <p class="timeline-desc">
+                Analyzed floor inventory turnover, promotional efficacy, and customer checkout velocity. Formulated actionable merchandising improvements.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 – 2024</span>
+              <h3 class="timeline-role">Classroom Educator &amp; Mentor (11 Mos)</h3>
+              <div class="timeline-org">Academic Coaching &amp; Mentoring</div>
+              <p class="timeline-desc">
+                Directed student engagement, structured curriculum delivery, and developed interpersonal leadership skills through personalized student mentorship.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2021 – 2024</span>
+              <h3 class="timeline-role">Bachelor of Computer Applications (BCA)</h3>
+              <div class="timeline-org">Khwaja Moinuddin Chishti (KMC) Language University</div>
+              <p class="timeline-desc">
+                Graduated with foundational expertise in software engineering, database design (SQL), data structures, and computer networking.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2019 – 2021</span>
+              <h3 class="timeline-role">Diploma in Civil Engineering</h3>
+              <div class="timeline-org">Maharishi University of Information Technology (MUIT)</div>
+              <p class="timeline-desc">
+                Developed analytical rigor, quantitative problem-solving skills, and project planning fundamentals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (videoportfolio-kohl aesthetic) -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-container">
+          <div class="contact-sub-label">REACH SOURABH</div>
+          
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-grid-top">
+              <div class="form-col-left">
+                <div class="underline-input-group">
+                  <input type="text" id="firstName" class="underline-input" placeholder="First Name *" required />
+                </div>
+                <div class="underline-input-group">
+                  <input type="text" id="lastName" class="underline-input" placeholder="Last Name" />
+                </div>
+                <div class="underline-input-group">
+                  <input type="email" id="email" class="underline-input" placeholder="Email Address *" required />
+                </div>
+                <div class="underline-input-group">
+                  <input type="text" id="roleInterest" class="underline-input" placeholder="Role of Interest (HR / BA / Banking / Other)" />
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column;">
+                <textarea id="message" class="underline-textarea" placeholder="Type your message or role details here *" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-bottom-row">
+              <label class="permission-wrap">
+                <input type="checkbox" id="consent" required checked />
+                <span>I give permission to contact me at this email address regarding relevant career opportunities and interviews.</span>
+              </label>
+
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn-submit-send">
+                  <span>Send Message</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (videoportfolio-kohl layout) -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Top 3 Columns -->
+      <div class="footer-top-grid">
+        <div>
+          <div class="footer-col-title">Core Competencies</div>
+          <div class="footer-col-desc">
+            US Talent Acquisition &amp; Staffing<br />
+            Business Analysis &amp; Requirements (BRD/FRD)<br />
+            Banking Operations &amp; Relationship Management
+          </div>
+        </div>
+
+        <div class="footer-col-center">
+          <div class="footer-col-title">Availability</div>
+          <div class="footer-col-desc">
+            Full-Time &amp; Trainee Roles<br />
+            Lucknow · Open to Hybrid / Relocation<br />
+            Immediate Joining Capability
+          </div>
+        </div>
+
+        <div class="footer-col-right">
+          <div class="footer-col-title">Pedigree</div>
+          <div class="footer-col-desc">
+            MBA (2025–2027) · BCA (2021–2024)<br />
+            162 NMAT by GMAC<br />
+            2026 Edition
+          </div>
+        </div>
+      </div>
+
+      <!-- Giant Name Typography -->
+      <div class="footer-huge-name-wrap">
+        <h2 class="footer-huge-name">SOURABH</h2>
+      </div>
+
+      <!-- Bottom 3 Columns -->
+      <div class="footer-bottom-grid">
+        <div>
+          <a href="#home" class="footer-email-link" style="font-weight: 700;">Back to top ↑</a>
+          <p style="color: #777; margin-top: 0.35rem;">© 2026 Sourabh Prakash. All Rights Reserved.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="mailto:sourabh.prakash99@gmail.com" class="footer-email-link">sourabh.prakash99@gmail.com</a>
+        </div>
+
+        <div style="text-align: right;">
+          <button onclick="openResumeModal()" class="footer-email-link" style="background: none; border: none; cursor: pointer; font-family: inherit; font-size: inherit;">
+            View ATS Resume (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ATS RESUME MODAL -->
+  <div id="resumeModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-paper">
+      <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 1rem;">
+        <button class="print-btn" onclick="window.print()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print / Save as PDF
+        </button>
+        <button class="modal-close-btn" onclick="closeResumeModal()">✕ Close</button>
+      </div>
+
+      <div class="resume-doc">
+        <h1>SOURABH PRAKASH</h1>
+        <div class="resume-subtitle">MBA Candidate (Marketing &amp; Finance) | BCA Graduate | US Talent Acquisition &amp; Business Analyst</div>
+        <div class="resume-contact-bar">
+          <span>📍 Lucknow, Uttar Pradesh, India</span>
+          <span>✉️ sourabh.prakash99@gmail.com</span>
+          <span>📱 Available upon request</span>
+          <span>💼 Open for Full-Time &amp; Trainee Positions</span>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="resume-sec-title">Professional Summary</div>
+        <p style="font-size: 0.88rem; color: #333; line-height: 1.55; margin-bottom: 0.5rem;">
+          Dynamic and multi-skilled professional pursuing an MBA in Marketing &amp; Finance at Babu Banarasi Das University, backed by a technical Bachelor of Computer Applications (BCA) degree. Demonstrates hands-on experience in full-cycle US Talent Acquisition (sourcing across Oregon, Alabama, Utah, and Pennsylvania), retail store operations at V-Mart Retail Ltd., and 11 months of classroom leadership and mentorship. Proven capability to interface effectively between software engineering teams and business stakeholders, leveraging SQL, advanced Excel, and structured requirements analysis (BRD/FRD).
+        </p>
+
+        <!-- Education -->
+        <div class="resume-sec-title">Education</div>
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>Master of Business Administration (MBA) — Marketing &amp; Finance</span>
+            <span>2025 – 2027</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>Babu Banarasi Das University (BBDU), Lucknow</span>
+            <span>NMAT Score: 162</span>
+          </div>
+        </div>
+
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>Bachelor of Computer Applications (BCA)</span>
+            <span>2021 – 2024</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>Khwaja Moinuddin Chishti Language University, Lucknow</span>
+            <span>Technical Foundation</span>
+          </div>
+        </div>
+
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>Diploma in Civil Engineering</span>
+            <span>2019 – 2021</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>Maharishi University of Information Technology (MUIT), Lucknow</span>
+            <span>Engineering Principles</span>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-sec-title">Professional Experience</div>
+        
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>US Talent Acquisition Intern</span>
+            <span>2024 – Present</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>Exolios Global</span>
+            <span>US Recruitment</span>
+          </div>
+          <ul>
+            <li>Spearheaded full-cycle technical and healthcare talent sourcing across 4 target US states: Oregon, Alabama, Utah, and Pennsylvania.</li>
+            <li>Constructed complex Boolean search strings and leveraged LinkedIn Recruiter to curate active and passive candidate pipelines.</li>
+            <li>Screened candidates for role competency, rate expectation alignment, and US tax compliance (W2, C2C, 1099).</li>
+            <li>Managed candidate records and status pipelines within the internal ATS, maintaining a 25% faster turnaround on submittals.</li>
+          </ul>
+        </div>
+
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>Store Operations &amp; Pricing Intern</span>
+            <span>2024</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>V-Mart Retail Ltd.</span>
+            <span>Retail Operations</span>
+          </div>
+          <ul>
+            <li>Analyzed daily retail floor operations, SKU inventory velocity, and promotional pricing elasticity for fast-moving apparel categories.</li>
+            <li>Collaborated with store leadership to restructure visual merchandising layouts, enhancing high-margin product discoverability.</li>
+            <li>Monitored stock replenishment and identified operational choke points to prevent shelf-out occurrences.</li>
+          </ul>
+        </div>
+
+        <div class="resume-job">
+          <div class="resume-job-head">
+            <span>Classroom Educator &amp; Mentor</span>
+            <span>2023 – 2024 (11 Mos)</span>
+          </div>
+          <div class="resume-job-sub">
+            <span>Academic Coaching Center</span>
+            <span>Mentorship &amp; Leadership</span>
+          </div>
+          <ul>
+            <li>Designed and executed structured lesson plans for diverse student batches, driving student performance and comprehension.</li>
+            <li>Facilitated one-on-one mentorship sessions, resolving academic hurdles and fostering student self-confidence.</li>
+          </ul>
+        </div>
+
+        <!-- Skills Matrix -->
+        <div class="resume-sec-title">Core Competencies &amp; Technical Skills</div>
+        <div class="resume-skill-row">
+          <strong>Talent Acquisition:</strong> Boolean Search, LinkedIn Recruiter, US Tax Classifications (W2/C2C/1099), Candidate Screening, ATS Tracking.
+        </div>
+        <div class="resume-skill-row">
+          <strong>Business Analysis:</strong> BRD / FRD Drafting, User Stories &amp; Acceptance Criteria, Process Mapping (BPMN), Stakeholder Elicitation, Gap Analysis.
+        </div>
+        <div class="resume-skill-row">
+          <strong>Banking &amp; Financial:</strong> Credit Risk Analysis, CASA Mobilization, Financial Ratios, KYC/AML Compliance, Working Capital Basics.
+        </div>
+        <div class="resume-skill-row">
+          <strong>Software &amp; Tools:</strong> SQL (Queries &amp; Relational Schema), MS Excel (Pivot Tables, VLOOKUP), Python (Basics), JIRA, Git.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="copyToast">Email copied to clipboard!</div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // Dismiss Preloader
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.classList.add('loaded');
+      }, 900);
+    });
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu) menu.classList.toggle('open');
+    }
+
+    // Role Pill Quick Filter
+    function filterVertical(type) {
+      document.querySelectorAll('.role-pill').forEach(pill => pill.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (type === 'hr') {
+        switchTab('tab-hr');
+        document.getElementById('expertise').scrollIntoView({ behavior: 'smooth' });
+      } else if (type === 'ba') {
+        switchTab('tab-ba');
+        document.getElementById('expertise').scrollIntoView({ behavior: 'smooth' });
+      } else if (type === 'banking') {
+        switchTab('tab-banking');
+        document.getElementById('expertise').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Expertise Tab Switcher
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+
+    // ATS Resume Modal
+    function openResumeModal() {
+      const modal = document.getElementById('resumeModal');
+      if (modal) modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal() {
+      const modal = document.getElementById('resumeModal');
+      if (modal) modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === 'resumeModal') {
+        closeResumeModal();
+      }
+    }
+
+    // Copy Email
+    function copyEmail() {
+      const email = 'sourabh.prakash99@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Email copied: ' + email);
+      }).catch(() => {
+        showToast('Email: ' + email);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('copyToast');
+      if (toast) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+      }
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('firstName').value;
+      const email = document.getElementById('email').value;
+
+      showToast('Thank you ' + firstName + '! Your message has been received.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
